@@ -1,9 +1,8 @@
 const { defineConfig } = require("cypress");
 
+// Setting base url for e2e tests
 module.exports = defineConfig({
   e2e: {
-    setupNodeEvents(on, config) {
-      // implement node event listeners here
-    },
+    baseUrl: 'http://localhost:3000',
   },
 });

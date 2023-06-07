@@ -3,15 +3,15 @@ import styled from 'styled-components';
 
 const Wrapper = styled.div`
     height: 100vh;
-    background-color: #0E76A8;
+    background-color: rgb(232, 119, 34);
     display: flex;
     align-items: center;
     justify-content: center;
 `;
 
 const Box = styled.div`
-    height: 500px;
-    width: 500px;
+    height: 300px;
+    width: 400px;
     text-align: center;
     box-shadow: 5px 5px 10px #333;
     display: flex;
@@ -29,49 +29,49 @@ const Input = styled.input`
     border: 2px solid #0E76A8;
     outline-width: 0;
     text-align: center;
+    margin-bottom: 16px;
 `;
 
 export const Example3Page = () => {
-    const MAX_LENGTH = 15;
-    const [firstNameInputValue, setFirstNameInputValue] = useState('');
-    const [lastNameInputValue, setLastNameInputValue] = useState('');
+    const [emailInputValue, setEmailInputValue] = useState('');
+    const [passwordInputValue, setPasswordInputValue] = useState('');
+    const [loggedIn, setLoggedIn] = useState(false);
+
+    const handleLogin = () => {
+        if (emailInputValue === 'test@fwd.com' && passwordInputValue === '123456789') {
+            setLoggedIn(true);
+        }
+    };
 
     return (
         <Wrapper>
-            <Box>
-                <Input
-                    type="text"
-                    value={firstNameInputValue}
-                    onChange={e => setFirstNameInputValue(e.target.value)}
-                    maxLength={MAX_LENGTH}
-                    className="input-large"
-                    id="first-name-input"
-                    data-cy="input-first-name"
-                />
-                <p>
-                    You have&nbsp;
-                    <span data-cy="first-name-chars-left-count">
-                        {MAX_LENGTH - firstNameInputValue.length}
-                    </span>
-                    &nbsp;characters left
-                </p>
-                <Input
-                    type="text"
-                    value={lastNameInputValue}
-                    onChange={e => setLastNameInputValue(e.target.value)}
-                    maxLength={MAX_LENGTH}
-                    className="input-large"
-                    id="last-name-input"
-                    data-cy="input-last-name"
-                />
-                <p>
-                    You have&nbsp;
-                    <span data-cy="last-name-chars-left-count">
-                        {MAX_LENGTH - lastNameInputValue.length}
-                    </span>
-                    &nbsp;characters left
-                </p>
-            </Box>
+            {loggedIn ? (
+                <Box>
+                    <p data-cy='successful-login' >Successful login!</p>
+                </Box>
+            ) : (
+                <Box>
+                    <Input
+                        type="email"
+                        value={emailInputValue}
+                        onChange={e => setEmailInputValue(e.target.value)}
+                        placeholder="Email"
+                        className="input-large"
+                        id="email-input"
+                        data-cy="input-email"
+                    />
+                    <Input
+                        type="password"
+                        value={passwordInputValue}
+                        onChange={e => setPasswordInputValue(e.target.value)}
+                        placeholder="Password"
+                        className="input-large"
+                        id="password-input"
+                        data-cy="input-password"
+                    />
+                    <button data-cy='login-button' onClick={handleLogin}>Login</button>
+                </Box>
+            )}
         </Wrapper>
     );
 }
