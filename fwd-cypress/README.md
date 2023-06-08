@@ -41,3 +41,16 @@
 
  ## File extension for tests:
   test.cy.js
+
+
+
+
+  ## Running Notes:
+
+In order to run this cypress, you need to create a config.json file in the root of the folder. The config.json folder should look like:
+  ```
+  {
+    "baseUrl": "http://localhost:3000",
+    "accessToken": "vdjshacnjaskchsaklbcksaclisaabcsbckh"
+  }
+  ```

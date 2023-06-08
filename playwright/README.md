@@ -1,6 +1,8 @@
 # Commands used
 
-
+## Note: 
+  You need a Node.js and NPM to run and work with Cypress
+  
 ## To Install Playwright
 
 `npm init playwright@latest`
