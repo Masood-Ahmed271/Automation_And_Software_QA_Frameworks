@@ -30,20 +30,4 @@ describe('API Testing', () => {
         });
     });
 
-    // // Testing Body
-    // it('GET - read - User Details', () => {
-
-    //     cy.request({
-    //         method: 'GET',
-    //         url:'https://gorest.co.in/public/v2/users/1661',
-    //         headers: {
-    //             'Authorization' : 'Bearer' + Cypress.env('accessToken')
-    //         }
-    //     }).then((response) => {
-    //         expect(response).to.have.property('status', 200);
-    //         expect(response.body.data).to.have.property('name');
-    //         expect(response.body.data.name).to.eq('Miss Garud Khan');
-    //     });
-    // });
-
 });

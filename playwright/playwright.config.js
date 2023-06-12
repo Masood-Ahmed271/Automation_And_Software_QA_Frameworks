@@ -1,6 +1,8 @@
 // @ts-check
 const { defineConfig, devices } = require('@playwright/test');
 
+const config = require('./.config.json');
+
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -27,6 +29,15 @@ module.exports = defineConfig({
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://127.0.0.1:3000',
     baseURL: 'http://localhost:3000',
+    launchOptions:{slowMo: 1000},
+    video: 'on',
+    extraHTTPHeaders: {
+      // We set this header per GitHub guidelines.
+      // 'Accept': 'application/vnd.github.v3+json',
+      // Add authorization token to all requests.
+      // Assuming personal access token available in the environment.
+      'Authorization': config.accessToken,
+    },
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
