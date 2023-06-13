@@ -8,5 +8,7 @@ module.exports = defineConfig({
     env: {
       accessToken : config.accessToken
     },
+    trashAssetsBeforeRuns :  false,
+    video: true,
   },
 });

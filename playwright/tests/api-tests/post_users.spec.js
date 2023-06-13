@@ -26,5 +26,5 @@ test("post api testing playwright", async ({request}) => {
     });
 
     expect(_response.status()).toBe(201)
-    console.log(await _response.json())
+    // console.log(await _response.json())
 });

@@ -13,6 +13,7 @@ const config = require('./.config.json');
  * @see https://playwright.dev/docs/test-configuration
  */
 module.exports = defineConfig({
+  testIgnore: 'tests/ignore/**',
   testDir: './tests',
   /* Run tests in files in parallel */
   fullyParallel: true,
@@ -50,10 +51,10 @@ module.exports = defineConfig({
       use: { ...devices['Desktop Chrome'] },
     },
 
-    {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
-    },
+    // {
+    //   name: 'firefox',
+    //   use: { ...devices['Desktop Firefox'] },
+    // },
 
     {
       name: 'webkit',
@@ -61,14 +62,7 @@ module.exports = defineConfig({
     },
 
     /* Test against mobile viewports. */
-    // {
-    //   name: 'Mobile Chrome',
-    //   use: { ...devices['Pixel 5'] },
-    // },
-    // {
-    //   name: 'Mobile Safari',
-    //   use: { ...devices['iPhone 12'] },
-    // },
+
 
     /* Test against branded browsers. */
     // {
