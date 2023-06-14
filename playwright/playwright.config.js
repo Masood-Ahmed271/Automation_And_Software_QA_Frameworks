@@ -31,6 +31,7 @@ module.exports = defineConfig({
     // baseURL: 'http://127.0.0.1:3000',
     baseURL: 'http://localhost:3000',
     launchOptions:{slowMo: 1000},
+    screenshot: 'on',
     video: 'on',
     extraHTTPHeaders: {
       // We set this header per GitHub guidelines.
@@ -41,7 +42,7 @@ module.exports = defineConfig({
     },
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'on-first-retry',
+    trace: 'on',
   },
 
   /* Configure projects for major browsers */
@@ -51,15 +52,15 @@ module.exports = defineConfig({
       use: { ...devices['Desktop Chrome'] },
     },
 
-    // {
-    //   name: 'firefox',
-    //   use: { ...devices['Desktop Firefox'] },
-    // },
-
     {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
+      name: 'firefox',
+      use: { ...devices['Desktop Firefox'] },
     },
+
+    // {
+    //   name: 'webkit',
+    //   use: { ...devices['Desktop Safari'] },
+    // },
 
     /* Test against mobile viewports. */
 

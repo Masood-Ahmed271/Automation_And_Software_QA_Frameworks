@@ -1,2 +1,7 @@
 node_modules/
 config.json
+# /cypress/videos/
+/screenshots/
+cypress/videos/*
+cypress/screenshots/*
+/Final-Videos/
