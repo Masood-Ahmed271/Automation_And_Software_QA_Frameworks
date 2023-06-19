@@ -30,7 +30,7 @@
  `npx cypress run --headed`
 
 ## To Run Single spec under e2e folder
- `npx cypress run –-spec cypress\e2e\MyTest.js"`
+ `npx cypress run --spec cypress\e2e\MyTest.js"`
 
 
 ## To Run All the specs under e2e folder using Chrome

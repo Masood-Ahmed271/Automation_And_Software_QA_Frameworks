@@ -38,10 +38,17 @@ export const Example3Page = () => {
     const [loggedIn, setLoggedIn] = useState(false);
 
     const handleLogin = () => {
-        if (emailInputValue === 'test@fwd.com' && passwordInputValue === '123456789') {
-            setLoggedIn(true);
+        const users = [
+          { email: 'test@fwd.com', password: '123456789' },
+          { email: 'test2@fwd.com', password: '987654321' },
+          { email: 'test3@fwd.com', password: 'test' }
+        ];
+      
+        const user = users.find(u => u.email === emailInputValue && u.password === passwordInputValue);
+        if (user) {
+          setLoggedIn(true);
         }
-    };
+      };
 
     return (
         <Wrapper>

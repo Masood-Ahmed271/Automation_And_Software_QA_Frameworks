@@ -1,4 +1,4 @@
-const { test, expect, firefox } = require('@playwright/test');
+const { test, expect, chromium, firefox } = require('@playwright/test');
 
 test.describe('Login Test Block', async () => {
 
@@ -13,13 +13,28 @@ test.describe('Login Test Block', async () => {
     // });
 
     test('should display the login page if login credentials inputted are correct', async () => {
+
+        // working for chromium
+        // const browser = await chromium.launch({ 
+        //     executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
+        //     headless: false,
+        //  });
+
+        // closes unexpectedly
         const browser = await firefox.launch({ 
-            // channel: 'firefox', 
-            // executablePath: '../../../../Chromium_versions/Firefox-v99.0b7.app',
-            // executablePath: '/Applications/Firefox.app/Contents/MacOS/firefox',
-            // executablePath: '/Users/masoodahmed/Desktop/Chromium_versions/Firefox-v99.0b7.app',
+            executablePath: '/Applications/Firefox.app/Contents/MacOS/Firefox',
+            channel: 'firefox',
             headless: false,
          });
+
+        // const browser = await firefox.launch({ 
+        //     executablePath: '/Applications/Firefox-v99.0b7.app/Contents/MacOS/Firefox-v990b7',
+        //     // channel: 'firefox', 
+        //     // executablePath: '../../../../Chromium_versions/Firefox-v99.0b7.app',
+        //     // executablePath: '/Applications/Firefox.app/Contents/MacOS/firefox',
+        //     // executablePath: '/Users/masoodahmed/Desktop/Chromium_versions/Firefox-v99.0b7.app',
+        //     headless: false,
+        //  });
 
         const page = await browser.newPage();
 
