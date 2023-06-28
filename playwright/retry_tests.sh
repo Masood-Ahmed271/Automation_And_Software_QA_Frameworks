@@ -11,6 +11,13 @@ npx playwright test $1 --workers $2 > myreport.txt
 # Wait for the command to finish
 wait $!
 
+
+# Check if myreport.txt exists
+if [ ! -f "myreport.txt" ]; then
+  echo "All tests passed"
+  exit 1
+fi
+
 # Set the Internal Field Separator to newline characters
 IFS='
 '
@@ -22,6 +29,12 @@ while read -r line; do
   i=$((i+1))
 done < myreport.txt
 
+
+# Check if array is empty or if the first element is an empty string
+if [ ${#array[@]} -eq 0 ] || [ -z "${array[0]}" ]; then
+  echo "All tests passed"
+  exit 1
+fi
 
 # Initialize the command string
 cmd="npx playwright test"
@@ -36,7 +49,10 @@ done
 # Add the --workers flag to the command
 cmd+=" --workers 1"
 
-
+echo "The command is: "
+echo $cmd
 # Run the command
 eval $cmd
 
+
+echo "Done with retrying tests"
