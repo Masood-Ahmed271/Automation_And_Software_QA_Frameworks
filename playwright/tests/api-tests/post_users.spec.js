@@ -18,7 +18,7 @@ test("post api testing playwright", async ({request}) => {
 
     const _response = await request.post('https://gorest.co.in/public/v1/users', {
         data: {
-            "name": 'FWD Insurance',
+            "name": 'Internship',
             'gender': "male",
             "email": testEmail,
             "status": "active"

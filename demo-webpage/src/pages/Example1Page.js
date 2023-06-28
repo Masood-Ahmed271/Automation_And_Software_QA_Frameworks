@@ -13,6 +13,6 @@ const Wrapper = styled.div`
 
 export const Example1Page = () => (
     <Wrapper>
-        <h1>Welcome to FWD Insurance Demo</h1>
+        <h1>Welcome to Demo</h1>
     </Wrapper>
 );

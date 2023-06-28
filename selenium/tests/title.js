@@ -13,7 +13,7 @@ async function title() {
     // locating the element
     // let title = await driver.find_element_by_xpath("/html/body/div/div/h1");
     let title = await driver.findElement({xpath: "/html/body/div/div/h1"}).getText();
-    let expected_title = "Welcome to FWD Insurance Demo";
+    let expected_title = "Welcome to Demo";
     // console.log(title);
     assert.equal(title, expected_title);
 

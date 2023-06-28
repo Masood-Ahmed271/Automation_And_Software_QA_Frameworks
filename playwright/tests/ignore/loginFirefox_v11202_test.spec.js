@@ -7,7 +7,7 @@ test.describe('Login Test Block', () => {
     });
 
     test('should display the login page if login credentials inputted are correct', async ({ page }) => {
-        await page.locator('[data-cy=input-email]').fill('test@fwd.com');
+        await page.locator('[data-cy=input-email]').fill('test@gmail.com');
         await page.locator('[data-cy=input-password]').fill('123456789');
         await page.locator('[data-cy=input-password]').fill('123456789');
         await page.locator('[data-cy=login-button]').click();

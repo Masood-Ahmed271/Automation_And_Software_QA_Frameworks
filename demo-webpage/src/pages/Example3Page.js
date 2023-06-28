@@ -39,9 +39,9 @@ export const Example3Page = () => {
 
     const handleLogin = () => {
         const users = [
-          { email: 'test@fwd.com', password: '123456789' },
-          { email: 'test2@fwd.com', password: '987654321' },
-          { email: 'test3@fwd.com', password: 'test' }
+          { email: 'test@gmail.com', password: '123456789' },
+          { email: 'test2@gmail.com', password: '987654321' },
+          { email: 'test3@gmail.com', password: 'test' }
         ];
       
         const user = users.find(u => u.email === emailInputValue && u.password === passwordInputValue);

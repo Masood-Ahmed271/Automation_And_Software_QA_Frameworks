@@ -10,6 +10,6 @@ test.describe('Title Test Block', () => {
         const h1Locator = page.locator('h1');
         const h1Text = await page.textContent('h1');
         // Assert that the H1 text contains the expected value
-        expect(h1Text).toContain('Welcome to FWD Insurance Demo');
+        expect(h1Text).toContain('Welcome to Demo');
     });
 });

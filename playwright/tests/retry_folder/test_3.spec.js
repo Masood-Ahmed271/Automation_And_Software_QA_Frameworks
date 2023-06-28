@@ -19,9 +19,9 @@ async function appendToFile() {
         
         const box4SelectedName = await page.waitForSelector('[data-cy=box-4-selected-name]');
         const selectedNameText = await box4SelectedName.innerText();
-        expect(selectedNameText).toEqual('Option Two');
+        expect(selectedNameText).toEqual('Option One');
 
-        console.log("test running")
+        // console.log("test running")
         // console.log("Hello", testInfo.status)
         // const file = testInfo.outputPath('dir', 'mynewfile1.txt');
         // await fs.promises.appendFile(file, 'Hello content!', 'utf8');
@@ -51,4 +51,4 @@ async function appendToFile() {
 }
 
 
-appendToFile()
+appendToFile() 

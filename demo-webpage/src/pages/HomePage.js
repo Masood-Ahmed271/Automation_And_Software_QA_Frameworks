@@ -27,7 +27,7 @@ export const HomePage = () => (
     <Wrapper>
         <nav style={{ background: "#F5DEB3", padding: '2%', color: "rgb(232, 119, 34)", marginBottom: "5%", }}>
 
-            <h1>FWD Insurance Software Quality Assurance - Demo Webpage</h1>
+            <h1>Software Quality Assurance - Demo Webpage</h1>
         </nav>
         <div style={{display:"flex", flexDirection:"column", alignItems:"center"}}>
             <div style={{display:"flex", flexDirection:"row",}}>
