@@ -14,7 +14,7 @@ async function testFunction() {
         
         const box4SelectedName = await page.waitForSelector('[data-cy=box-4-selected-name]');
         const selectedNameText = await box4SelectedName.innerText();
-        expect(selectedNameText).toEqual('Option Two');
+        expect(selectedNameText).toEqual('Option Two'); // Two
 
     });
 }

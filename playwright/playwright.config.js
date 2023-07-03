@@ -13,6 +13,7 @@ const config = require('./.config.json');
  * @see https://playwright.dev/docs/test-configuration
  */
 module.exports = defineConfig({
+  // testIgnore: ['tests/ignore/**', 'tests/retry_folder/**'],
   testIgnore: 'tests/ignore/**',
   testDir: './tests',
   /* Run tests in files in parallel */

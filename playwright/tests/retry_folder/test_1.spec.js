@@ -8,5 +8,5 @@ test.beforeEach(async ({ page }) => {
 
 test('displays the correct count for the number of selected checkboxes', async ({ page }) => {
     await page.getByLabel('Option One').check();
-    expect(await page.locator('[data-cy=box-2-selected-count]')).toHaveText('1');
+    expect(await page.locator('[data-cy=box-2-selected-count]')).toHaveText('1'); // 1
 });

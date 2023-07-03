@@ -1,0 +1,2 @@
+/Users/masoodahmed/Desktop/Internship-Material/playwright/tests/retry_folder/test_1.spec.js
+/Users/masoodahmed/Desktop/Internship-Material/playwright/tests/retry_folder/test_3.spec.js
