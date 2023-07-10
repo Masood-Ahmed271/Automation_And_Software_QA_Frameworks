@@ -1,5 +1,5 @@
 import * as projectPath from 'path';
-const androidAppPath = projectPath.join(process.cwd(), 'app/android/Android-MyDemoAppRN.1.3.0.build-244.apk')
+const androidAppPath = projectPath.join(process.cwd(), 'app/android/Android-MyDemoAppRN.1.3.0.build-244.apk');
 
 export const config = {
     //
@@ -28,7 +28,9 @@ export const config = {
     //
     specs: [
         // ToDo: define location for spec files here
-        './test/specs/**/*.js'
+        './test/specs/**/*.js',
+        './test/test1/*.js',
+        './test/test3/*.js',
     ],
     // Patterns to exclude.
     exclude: [
@@ -134,7 +136,36 @@ export const config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
-    reporters: ['spec'],
+    // reporters: ["spec", "dot", "allure",["video",{saveAllVideos: true,videoSlowdownMultiplier: 3}]],
+    
+    // ********* Issue with html-nice reporter *********
+
+    // reporters: ["html-nice", {
+    //     outputDir: './reports/html-reports/',
+    //     filename: 'report.html',
+    //     reportTitle: 'Test Report Title',
+    //     linkScreenshots: true,
+    //     //to show the report in a browser when done
+    //     showInBrowser: true,
+    //     collapseTests: false,
+    //     //to turn on screenshots after every test
+    //     useOnAfterCommandForScreenshot: false,
+
+    //     //to initialize the logger
+    //     // LOG: log4j.getLogger("default")
+    // }
+    // ],
+    // reporters: ['reportportal'],    // not working
+    //  video reporter working
+    reporters: [
+        ["video", {
+          saveAllVideos: true,       // If true, also saves videos for successful test cases
+          videoSlowdownMultiplier: 3, // Higher to get slower videos, lower for faster videos [Value 1-100]
+        }],
+      ],
+    // reporters: ['dot'],
+    // reporters: ["allure"],   // working
+    // reporters: ['spec','dot','junit',['allure', {outputDir: 'allure-results'}],'reportportal','video','json','cucumberjs-json','mochawesome','html-nice','undefined'],
 
     
     //
