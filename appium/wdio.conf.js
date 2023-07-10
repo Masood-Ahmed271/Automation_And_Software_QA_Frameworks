@@ -31,6 +31,7 @@ export const config = {
         './test/specs/**/*.js',
         './test/test1/*.js',
         './test/test3/*.js',
+        // './test/Emulator_Specs/*.js',
     ],
     // Patterns to exclude.
     exclude: [
@@ -57,7 +58,10 @@ export const config = {
     // If you have trouble getting all important capabilities together, check out the
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://saucelabs.com/platform/platform-configurator
-    //
+    // 
+
+
+
     capabilities: [{
         platformName: 'Android',
         'appium:automationName': 'UiAutomator2',
@@ -67,6 +71,29 @@ export const config = {
         'appium:udid':'37003db0',
         'appium:platformVersion':'12',
     }],
+
+    // trying parallel execution
+
+    // capabilities: [{
+    //     platformName: 'Android',
+    //     'appium:automationName': 'UiAutomator2',
+    //     'appium:deviceName': 'Pixel 4 API 30',
+    //     'appium:app': '/Users/masoodahmed/Desktop/Internship-Material/appium/app/Android-MyDemoAppRN.1.3.0.build-244.apk',
+    //     'appium:udid':'emulator-5556',
+    //     'appium:platformVersion':'11',
+    //     "appium:SystemPort": "8201",
+    //     port: 4723
+    // },
+    // {
+    //     platformName: 'Android',
+    //     'appium:automationName': 'UiAutomator2',
+    //     'appium:deviceName': 'Pixel 4 API 31',
+    //     'appium:app': '/Users/masoodahmed/Desktop/Internship-Material/appium/app/Android-MyDemoAppRN.1.3.0.build-244.apk',
+    //     'appium:udid':'emulator-5554',
+    //     'appium:platformVersion':'12',
+    //     "appium:SystemPort": "8203",
+    //     port: 4724
+    // },],
     //
     // ===================
     // Test Configurations
