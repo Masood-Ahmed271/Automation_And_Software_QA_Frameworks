@@ -26,13 +26,14 @@ export const config = {
     // then the current working directory is where your `package.json` resides, so `wdio`
     // will be called from there.
     //
-    specs: [
-        // ToDo: define location for spec files here
-        './test/specs/**/*.js',
-        './test/test1/*.js',
-        './test/test3/*.js',
-        // './test/Emulator_Specs/*.js',
-    ],
+    // It is commented out so that we can run test cases separately depending on the device and is specified in capabilities
+    // specs: [
+    //     // ToDo: define location for spec files here
+    //     './test/specs/**/*.js',
+    //     // './test/test1/*.js',
+    //     // './test/test3/*.js',
+    //     './test/Emulator_Specs/*.js',
+    // ],
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'
@@ -53,7 +54,7 @@ export const config = {
     // and 30 processes will get spawned. The property handles how many capabilities
     // from the same test should run tests.
     //
-    maxInstances: 1,
+    maxInstances: 5,
     //
     // If you have trouble getting all important capabilities together, check out the
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
@@ -61,39 +62,82 @@ export const config = {
     // 
 
 
-
-    capabilities: [{
-        platformName: 'Android',
-        'appium:automationName': 'UiAutomator2',
-        'appium:deviceName': 'vivo 1920',
-        'appium:appPackage': 'com.android.bbkcalculator',
-        'appium:appActivity': 'com.android.bbkcalculator.Calculator',
-        'appium:udid':'37003db0',
-        'appium:platformVersion':'12',
-    }],
-
-    // trying parallel execution
-
+    // commented out for parallel execution
     // capabilities: [{
     //     platformName: 'Android',
     //     'appium:automationName': 'UiAutomator2',
-    //     'appium:deviceName': 'Pixel 4 API 30',
-    //     'appium:app': '/Users/masoodahmed/Desktop/Internship-Material/appium/app/Android-MyDemoAppRN.1.3.0.build-244.apk',
-    //     'appium:udid':'emulator-5556',
-    //     'appium:platformVersion':'11',
-    //     "appium:SystemPort": "8201",
-    //     port: 4723
-    // },
-    // {
-    //     platformName: 'Android',
-    //     'appium:automationName': 'UiAutomator2',
-    //     'appium:deviceName': 'Pixel 4 API 31',
-    //     'appium:app': '/Users/masoodahmed/Desktop/Internship-Material/appium/app/Android-MyDemoAppRN.1.3.0.build-244.apk',
-    //     'appium:udid':'emulator-5554',
+    //     'appium:deviceName': 'vivo 1920',
+    //     'appium:appPackage': 'com.android.bbkcalculator',
+    //     'appium:appActivity': 'com.android.bbkcalculator.Calculator',
+    //     'appium:udid':'37003db0',
     //     'appium:platformVersion':'12',
-    //     "appium:SystemPort": "8203",
-    //     port: 4724
-    // },],
+    // }],
+
+    // trying parallel execution
+
+    capabilities: [
+        // {    platformName: 'Android',
+        //     'appium:automationName': 'UiAutomator2',
+        //     'appium:deviceName': 'Nexus 6P API 32 Personal',
+        //     'appium:app': '/Users/masoodahmed/Desktop/Internship-Material/appium/app/Android-MyDemoAppRN.1.3.0.build-244.apk',
+        //     'appium:udid':'emulator-5556',
+        //     'appium:platformVersion':'12',
+        //     "appium:SystemPort": "8201",
+        //     specs: ['./test/Emulator_Specs/*.js',],
+        // },
+        {
+            platformName: 'Android',
+            'appium:automationName': 'UiAutomator2',
+            'appium:deviceName': 'Pixel 4 API 30',
+            'appium:app': '/Users/masoodahmed/Desktop/Internship-Material/appium/app/Android-MyDemoAppRN.1.3.0.build-244.apk',
+            'appium:udid':'emulator-5556',
+            'appium:platformVersion':'11',
+            "appium:SystemPort": "8203",
+            specs: ['./test/Emulator_Specs/*.js',],
+        },
+        // {
+        //     platformName: 'Android',
+        //     'appium:automationName': 'UiAutomator2',
+        //     'appium:deviceName': 'appium',
+        //     'appium:app': '/Users/masoodahmed/Desktop/Internship-Material/appium/app/Android-MyDemoAppRN.1.3.0.build-244-2.apk',
+        //     'appium:udid':'emulator-5556',
+        //     'appium:platformVersion':'9',
+        //     "appium:SystemPort": "8207",
+        //     specs: ['./test/Emulator_Specs/*.js',],
+        // },
+        {
+            platformName: 'Android',
+            'appium:automationName': 'UiAutomator2',
+            'appium:deviceName': 'Comp 3330 - Nexus 6 API 29',
+            'appium:app': '/Users/masoodahmed/Desktop/Internship-Material/appium/app/Android-MyDemoAppRN.1.3.0.build-244.apk',
+            'appium:udid':'emulator-5554',
+            'appium:platformVersion':'10',
+            "appium:SystemPort": "8209",
+            specs: ['./test/Emulator_Specs/*.js',],
+        },
+        {
+            platformName: 'Android',
+            'appium:automationName': 'UiAutomator2',
+            'appium:deviceName': 'vivo 1920',
+            'appium:appPackage': 'com.android.bbkcalculator',
+            'appium:appActivity': 'com.android.bbkcalculator.Calculator',
+            'appium:udid':'37003db0',
+            'appium:platformVersion':'12',
+            "appium:SystemPort": "8205",
+            specs: ['./test/specs/**/*.js',],
+        },
+        // {
+        //     platformName: 'Android',
+        //     'appium:automationName': 'UiAutomator2',
+        //     'appium:deviceName': 'SM-G9880',
+        //     'appium:appPackage': 'com.sec.android.app.popupcalculator',
+        //     'appium:appActivity': 'com.sec.android.app.popupcalculator.Calculator',
+        //     'appium:udid':'R5CN407EJXX',
+        //     'appium:platformVersion':'13',
+        //     "appium:SystemPort": "8207",
+        //     specs: ['./test/specs2/**/*.js',],
+        // },
+    ],
     //
     // ===================
     // Test Configurations
