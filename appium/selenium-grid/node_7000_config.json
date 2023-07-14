@@ -1,25 +1,25 @@
 {
     "capabilities": [
       {
-        "version": "9",
+        "version": "11",
         "maxInstances": 1,
         "platform": "ANDROID",
-        "deviceName": "Samsung J7",
-        "udid": "3300d3672cca62b9"
+        "deviceName": "Pixel 4 API 30",
+        "udid": "emulator-5556"
       }
     ],
     "configuration": {
       "cleanUpCycle": 2000,
       "timeout": 30000,
       "proxy": "org.openqa.grid.selenium.proxy.DefaultRemoteProxy",
-      "url": "http://192.168.1.205:6000/wd/hub",
-      "host": "192.168.1.205",
-      "port": 6000,
+      "url": "http://192.168.0.152:6500/wd/hub",
+      "host": "192.168.0.152",
+      "port": 6500,
       "maxSession": 1,
       "register": true,
       "registerCycle": 5000,
       "hubPort": 4444,
-      "hubHost": "192.168.1.205",
+      "hubHost": "192.168.0.152",
       "hubProtocol": "http"
     }
   }
